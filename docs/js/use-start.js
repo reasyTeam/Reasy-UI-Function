@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["use-start"],{"601a":function(n,t,s){"use strict";s.r(t);var u=function(){var n=this,t=n._self._c;return t("div",[n._v("开始")])},e=[],a=s("2877"),l={},r=Object(a["a"])(l,u,e,!1,null,null,null);t["default"]=r.exports}}]);

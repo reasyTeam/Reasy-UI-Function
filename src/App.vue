@@ -1,0 +1,133 @@
+<template>
+  <div id="app">
+    <demo-head></demo-head>
+    <div id="scroll-wrapper">
+      <div class="page page-container">
+        <nav class="page-nav">
+          <v-scroll ref="scroll" no-id>
+            <side-nav
+              class="nav-scroll"
+              :data="navsData"
+              :base="`/`"
+              @change="change"
+            ></side-nav>
+          </v-scroll>
+        </nav>
+        <section class="page-content">
+          <router-view></router-view>
+        </section>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import DemoHead from "./views/main/head";
+import navsData from "./router/nav.config";
+import SideNav from "./views/main/side-nav.vue";
+
+export default {
+  name: "app",
+  components: {
+    DemoHead,
+    SideNav
+  },
+  data() {
+    return { navsData };
+  },
+  methods: {
+    change() {
+      setTimeout(() => {
+        this.$refs.scroll.update();
+      }, 200);
+    }
+  }
+};
+</script>
+<style lang="scss">
+$header-height: 80px;
+$nav-width: 256px;
+
+.page {
+  padding-left: $nav-width;
+  width: 100%;
+  box-sizing: border-box;
+
+  .page-nav {
+    width: $nav-width;
+    position: fixed;
+    bottom: 0;
+    top: $header-height;
+    left: 0;
+    z-index: 1;
+  }
+
+  .page-content {
+    padding-top: 100px;
+
+    // max-width: 1000px;
+    z-index: 0;
+    position: relative;
+    background-color: #fff;
+  }
+
+  .nav-scroll {
+    padding: 24px 0;
+  }
+}
+
+.page-content {
+  padding-top: 50px;
+}
+.page-content .content > h1 {
+  margin: 20px 0 20px;
+  font-size: 26px;
+  color: #262626;
+}
+.page-content .content > h2 {
+  margin: 55px 0 20px;
+}
+.page-content .content > h3 {
+  margin: 40px 0 20px;
+}
+.page-content .content > h4 {
+  margin: 24px 0 14px;
+}
+.page-content .content > table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+}
+.page-content .content > table strong {
+  font-weight: bold;
+}
+.page-content .content > table td,
+.page-content .content > table th {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px;
+  max-width: 250px;
+}
+.page-content .content > table th {
+  text-align: left;
+  white-space: nowrap;
+  color: #262626;
+  font-weight: normal;
+}
+.page-content .content > table td {
+  color: #565656;
+}
+.page-content .content > table th:first-child,
+.page-content .content > table td:first-child {
+  padding-left: 10px;
+}
+.page-content .content > ul:not(.timeline) {
+  margin: 10px 0;
+  padding: 0 0 0 20px;
+  font-size: 14px;
+  color: #595959;
+  line-height: 2em;
+}
+</style>

@@ -1,0 +1,20 @@
+{
+  "wanRate": [
+    { downSpeed: 4, upSpeed: 3, time: 1661581742766 },
+    { downSpeed: 5, upSpeed: 9, time: 1661581743766 },
+    { downSpeed: 7, upSpeed: 1, time: 1661581744766 },
+    { downSpeed: 8, upSpeed: 7, time: 1661581745766 },
+    { downSpeed: 9, upSpeed: 6, time: 1661581746766 },
+    { downSpeed: 9, upSpeed: 6, time: 1661581748766 },
+    { downSpeed: 9, upSpeed: 6, time: 1661581752766 }
+  ],
+  apStatus: {
+    onlineApNum: 43, 
+    offlineApNum: 0, 
+    wifiClientNum: 45, 
+    wifiClientNum_5g: 87
+  },
+  workMode: {
+    mode: "router"
+  }
+}
